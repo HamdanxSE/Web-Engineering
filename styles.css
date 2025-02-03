@@ -1,0 +1,207 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+/* Dropdown */
+.dropdown-menu {
+    display: none;
+position: absolute;
+    background: white;
+    color: black;
+    list-style: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Section Styling */
+section {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the content inside the section is flex */
+.content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Article on the Left */
+article {
+    flex: 2; /* Takes up more space */
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Aside (Tips) on the Right */
+aside {
+    flex: 1; /* Takes up less space */
+    background: #f8f8f8;
+    padding: 15px;
+    border-left: 3px solid #333;
+    border-radius: 5px;
+}
+
+/* Links */
+article a, aside a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+article a:hover, aside a:hover {
+    text-decoration: underline;
+}
+
+/* 📱 Responsive Fix (For Mobile: Stack Layout) */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    aside {
+        border-left: none;
+        border-top: 3px solid #333;
+        margin-top: 10px;
+    }
+}
+
+
+
+/* Hint Section */
+.hint {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.hint-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+/* Hint Blocks */
+.hint-block {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Puzzle Layout */
+.puzzle-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Drop Zones */
+.drop-zone {
+    width: 80px;
+    height: 80px;
+    border: 2px dashed #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f8f8;
+}
+
+/* Draggable Blocks */
+.draggable-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.draggable {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Selected Block */
+.draggable.selected {
+    border: 3px solid black;
+    cursor: pointer;
+}
+
+/* Block Colors */
+.block.red, .hint-block.red { background-color: red; }
+.block.blue, .hint-block.blue { background-color: blue; }
+.block.green, .hint-block.green { background-color: green; }
+.block.yellow, .hint-block.yellow { background-color: yellow; }
+
+/* Dragging Effect */
+.draggable:active {
+    opacity: 0.5;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
